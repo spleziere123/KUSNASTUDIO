@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.page-wrapper {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.network-title {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.network-text {
+  max-width: 580px;
+  margin: 50px auto 0 auto;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.8;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.network-text p {
+  margin-bottom: 18px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title">
+      <a href="index.html">Studio Kusnawijaya</a>
+    </div>
+    <nav class="right-nav">
+      <a href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wrapper">
+
+  <div class="network-title" onclick="toggleNetwork()">
+    René Kusnawijaya <span id="networkPlus">+</span>
+  </div>
+
+  <div id="networkText" class="network-text">
+    <p>  <strong>René Kusnawijaya</strong> is an interdisciplinary designer and photographer specializing in <strong>adaptive reuse</strong> and <strong>sustainable architecture</strong>. His work focuses on <strong>building within existing structures</strong>, combining material innovation with cultural continuity to create resource-efficient, context-sensitive designs.
+    </p>
+    <p>
+      René Kusnawijaya academic education spans three European institutions: the <strong>Royal College of Art (RCA) in London</strong>, the <strong>ETSAS in Seville</strong>, and the <strong>Technical University of Munich (TUM)</strong>.
+    </p>
+    <p>
+      His practice prioritizes <strong>sustainable material systems</strong>, favoring locally sourced, low-impact materials like reclaimed wood, bio-based composites, and recycled aggregates. By integrating <strong>circular economy principles</strong>, The Studios projects aim to minimize waste and energy use through modular, reversible construction techniques.
+    </p>
+    <p>
+      Beyond design, <strong>photography</strong> is used to document architectural processes, employing wide-angle lenses to capture spatial narratives. His professional experience includes collaborations in <strong>Munich, Bali, and Madrid</strong>, working with emerging architecture firms on adaptive reuse and interior transformation projects.
+    </p>
+    <p>
+      Currently based in Madrid as an <strong>autónomo</strong>, René Kusnawijaya merges research, design, and visual storytelling to advocate for architecture that is <strong>responsive to context, climate, and community</strong>.</p>
+  </div>
+
+</main>
+
+<script>
+function toggleNetwork() {
+  const text = document.getElementById("networkText");
+  const plus = document.getElementById("networkPlus");
+
+  if (text.style.maxHeight && text.style.maxHeight !== "0px") {
+    text.style.maxHeight = "0px";
+    plus.textContent = "+";
+  } else {
+    text.style.maxHeight = text.scrollHeight + "px";
+    plus.textContent = "−";
+  }
+}
+</script>
+
+</body>
+</html>

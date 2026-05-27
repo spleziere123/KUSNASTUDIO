@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photography – Atelier René Kusnawijaya</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* ===== Photography Grid 5x4 ===== */
+.grid-5x4 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  padding: 0;
+  height: calc(100vh - 100px);
+  margin: 0;
+
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.scale-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0);
+  color: #f3f57f;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.grid-item:hover .scale-label {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.grid-5x4:hover .grid-item {
+  filter: grayscale(60%);
+}
+
+.grid-5x4 .grid-item:hover {
+  filter: none;
+}
+
+@media(max-width:1200px){
+  .grid-5x4 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media(max-width:768px){
+  .grid-5x4 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title"><a href="index.html">Atelier René Kusnawijaya</a></div>
+    <nav class="right-nav">
+      <a href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="grid-5x4">
+  <!-- Beispielhafte Bilder -->
+  <a href="photography-project-01.html" class="grid-item">
+    <img src="images/photography/photo-01-01.jpg" alt="Photo Project 01">
+    <div class="scale-label">Project 01</div>
+  </a>
+  <a href="photography-project-02.html" class="grid-item">
+    <img src="images/photography/photo-01-02.jpg" alt="Photo Project 02">
+    <div class="scale-label">Project 02</div>
+  </a>
+  <a href="photography-project-03.html" class="grid-item">
+    <img src="images/photography/photo-01-03.jpg" alt="Photo Project 03">
+    <div class="scale-label">Project 03</div>
+  </a>
+  <a href="photography-project-04.html" class="grid-item">
+    <img src="images/photography/photo-15-08.jpg" alt="Photo Project 04">
+    <div class="scale-label">Lavapies_19</div>
+  </a>
+  <a href="photography-project-05.html" class="grid-item">
+    <img src="images/photography/photo-01-05.jpg" alt="Photo Project 05">
+    <div class="scale-label">Project 05</div>
+  </a>
+    <a href="photography-project-06.html" class="grid-item">
+    <img src="images/photography/photo-02-01.jpg" alt="Photo Project 01">
+    <div class="scale-label">Project 06</div>
+  </a>
+  <a href="photography-project-07.html" class="grid-item">
+    <img src="images/photography/photo-03-01.jpg" alt="Photo Project 02">
+    <div class="scale-label">Project 07</div>
+  </a>
+  <a href="photography-project-08.html" class="grid-item">
+    <img src="images/photography/photo-04-01.jpg" alt="Photo Project 03">
+    <div class="scale-label">Project 08</div>
+  </a>
+  <a href="photography-project-09.html" class="grid-item">
+    <img src="images/photography/photo-05-01.jpg" alt="Photo Project 04">
+    <div class="scale-label">Project 09</div>
+  </a>
+  <a href="photography-project-10.html" class="grid-item">
+    <img src="images/photography/photo-06.jpg" alt="Photo Project 05">
+    <div class="scale-label">Project 10</div>
+  </a>
+    <a href="photography-project-11.html" class="grid-item">
+    <img src="images/photography/photo-07.jpg" alt="Photo Project 01">
+    <div class="scale-label">Project 11</div>
+  </a>
+  <a href="photography-project-12.html" class="grid-item">
+    <img src="images/photography/photo-08.jpg" alt="Photo Project 02">
+    <div class="scale-label">Project 12</div>
+  </a>
+  <a href="photography-project-13.html" class="grid-item">
+    <img src="images/photography/photo-09.jpg" alt="Photo Project 03">
+    <div class="scale-label">Project 13</div>
+  </a>
+  <a href="photography-project-14.html" class="grid-item">
+    <img src="images/photography/photo-01-04.jpg" alt="Photo Project 04">
+    <div class="scale-label">Project 14</div>
+  </a>
+  <a href="photography-project-15.html" class="grid-item">
+    <img src="images/photography/photo-11.jpg" alt="Photo Project 05">
+    <div class="scale-label">Project 15</div>
+  </a>
+    <a href="photography-project-16-Carmona.html" class="grid-item">
+    <img src="images/photography/photo-12-01.jpg" alt="Photo Project 16">
+    <div class="scale-label">Carmona</div>
+  </a>
+  <a href="photography-project-17-Singapur.html" class="grid-item">
+    <img src="images/photography/photo-13-01.jpg" alt="Photo Project 02">
+    <div class="scale-label">Singapore</div>
+  </a>
+  <a href="photography-project-18.html" class="grid-item">
+    <img src="images/photography/photo-14.jpg" alt="Photo Project 03">
+    <div class="scale-label">Project 17</div>
+  </a>
+  <a href="photography-project-19-Sevilla.html" class="grid-item">
+    <img src="images/photography/photo-19-03.jpg" alt="Photo Project 04">
+    <div class="scale-label">Sevilla</div>
+  </a>
+  <a href="photography-project-20-.html" class="grid-item">
+    <img src="images/photography/photo-16.jpg" alt="Photo Project 05">
+    <div class="scale-label">Project 18</div>
+  </a>
+  <!-- weitere Fotos bis 5x4 -->
+</main>
+
+</body>
+</html>

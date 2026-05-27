@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Photography Project 01 – Atelier René Kusnawijaya</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ===== LAYOUT ===== */
+
+.project-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 70px);
+}
+
+/* LEFT IMAGE */
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* ← wichtig */
+  background: white;     /* ruhiger Rand bei Hochformat */
+  transition: filter 0.3s ease;
+}
+
+}
+
+/* CLICK INDICATOR – OPEN TRIANGLE */
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  border: 1.5px solid white;
+}
+
+.project-image:hover::after {
+  opacity: 0.8;
+}
+
+.project-image:hover img {
+  filter: brightness(0.85);
+}
+
+/* RIGHT CONTENT */
+
+.project-text {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.project-text h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.project-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* ===== PROJECT IMAGE THUMBNAILS ===== */
+
+.project-thumbs {
+  display: flex;
+  gap: 6px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.project-thumbs img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.project-thumbs img:hover {
+  opacity: 1;
+}
+
+/* ===== BACK TO PHOTOGRAPHY GRID (2x2) ===== */
+
+.back-grid {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 30px);
+  grid-template-rows: repeat(2, 30px);
+  gap: 2px;
+}
+
+.back-grid img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.back-grid img:hover {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .project-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh auto;
+  }
+
+  .back-grid {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title">
+      <a href="index.html">Atelier René Kusnawijaya</a>
+    </div>
+    <div></div>
+  </div>
+</header>
+
+<main class="project-wrapper">
+
+  <!-- LEFT: MAIN IMAGE -->
+  <div class="project-image" onclick="nextImage()">
+    <img id="mainImage" src="images/photography/photo-19-03.jpg">
+  </div>
+
+  <!-- RIGHT: TEXT + PROJECT THUMBS -->
+  <div class="project-text">
+
+    <h2>Sevilla 26'</h2>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Singapore 19'</p>
+
+    <!-- ONLY CURRENT PROJECT IMAGES -->
+    <div class="project-thumbs">
+      <img src="images/photography/photo-19-01.jpg" onclick="setImage(0)">
+      <img src="images/photography/photo-19-02.jpg" onclick="setImage(1)">
+      <img src="images/photography/photo-19-03.jpg" onclick="setImage(2)">
+      <img src="images/photography/photo-19-04.jpg" onclick="setImage(3)">
+    </div>
+
+  </div>
+
+  <!-- BACK TO PHOTOGRAPHY GRID -->
+  <a href="photography.html" class="back-grid">
+    <img src="images/photography/photo-19-01.jpg">
+    <img src="images/photography/photo-19-02.jpg">
+    <img src="images/photography/photo-19-03.jpg">
+    <img src="images/photography/photo-19-04.jpg">
+  </a>
+
+</main>
+
+<script>
+
+/* IMAGE SWITCHING */
+
+const images = [
+  "images/photography/photo-19-01.jpg",
+  "images/photography/photo-19-02.jpg",
+  "images/photography/photo-19-03.jpg",
+  "images/photography/photo-19-04.jpg"
+];
+
+let index = 0;
+
+function nextImage() {
+  index = (index + 1) % images.length;
+  document.getElementById("mainImage").src = images[index];
+}
+
+function setImage(i) {
+  index = i;
+  document.getElementById("mainImage").src = images[index];
+}
+
+</script>
+
+</body>
+</html>

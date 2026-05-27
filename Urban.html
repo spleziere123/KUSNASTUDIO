@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Urban – Atelier René Kusnawijaya</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 0;
+  margin: 40;
+  height: calc(100vh - 100px);
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Titel nur bei Hover */
+.scale-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 14px;
+  padding: 3px 6px;
+  border-radius: 3px;
+  font-family: Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item:hover .scale-label {
+  opacity: 1;
+}
+
+@media(max-width:1024px){
+  .grid-2x2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title"><a href="index.html">Atelier René Kusnawijaya</a></div>
+    <nav class="right-nav">
+      <a href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="grid-2x2">
+  <!-- Klick auf Projekt 01 → architecture-project-01.html -->
+  <a href="urban-project-01.html" class="grid-item">
+    <img src="images/urban/urban-01-01.jpg" alt="Project 01">
+    <div class="scale-label">Project 01</div>
+  </a>
+
+  <a href="urban-project-02.html" class="grid-item">
+    <img src="images/urban/urban-02-01.jpg" alt="Project 02">
+    <div class="scale-label">Project 02</div>
+  </a>
+
+  <a href="urban-project-03.html" class="grid-item">
+    <img src="images/urban/urban-03-01.jpg" alt="Project 03">
+    <div class="scale-label">Project 03</div>
+  </a>
+
+  <a href="urban-project-04.html" class="grid-item">
+    <img src="images/urban/urban-04-01.jpg" alt="Project 04">
+    <div class="scale-label">Project 04</div>
+  </a>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Studio Kusna</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ── KUSNA WORDMARK ── */
+    .kusna-wordmark {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0;
+      text-decoration: none;
+      line-height: 1;
+    }
+    .kusna-wordmark .kusna-name {
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      animation: kusna-shift 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .kusna-wordmark .kusna-studio {
+      font-family: inherit;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.38em;
+      color: #111;
+      opacity: 0.4;
+      margin-left: 0.65em;
+      align-self: center;
+    }
+    @keyframes kusna-shift {
+      0%,  28% { color: #f05a28; }
+      33%, 61% { color: #f05a28; }
+      66%, 94% { color: #f05a28; }
+      99%,100% { color: #f05a28; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .kusna-wordmark .kusna-name {
+        animation: none;
+        color: #111;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div></div>
+      <div class="title">
+        <a href="index.html" class="kusna-wordmark">
+          <span class="kusna-name">KUSNA</span>
+          <span class="kusna-studio">studio</span>
+        </a>
+      </div>
+      <nav class="right-nav">
+        <a href="about.html">About</a>
+        <a href="network.html">Network</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN: Zufälliges Startbild -->
+  <main class="intro">
+    <img id="introImage" alt="Random Intro Image">
+  </main>
+
+  <!-- JS: Zufälliges Introbild -->
+  <script src="js/intro-random.js"></script>
+
+</body>
+</html>

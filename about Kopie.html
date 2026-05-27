@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== About Page Styles ===== */
+.page-wrapper {
+  margin-top: 140px;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #111;
+}
+
+.header-inner .title a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+.about-name {
+  font-size: 20px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.about-name span {
+  margin-left: 10px;
+}
+
+.about-text {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.about-text p {
+  margin-bottom: 18px;
+}
+
+.portrait {
+  margin-top: 60px;
+}
+
+.portrait img {
+  width: 240px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title">
+      <a href="index.html">Studio Kusnawijaya</a>
+    </div>
+    <nav class="right-nav">
+      <a href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wrapper">
+
+  <!-- Name + Aufklappen -->
+  <div class="about-name" onclick="toggleAbout()">
+    René Kusnawijaya <span id="aboutPlus">+</span>
+  </div>
+
+  <!-- Aufklappbarer Text -->
+  <div id="aboutText" class="about-text">
+    <p>
+      <strong>René Kusnawijaya</strong> is an interdisciplinary designer and photographer specializing in <strong>adaptive reuse</strong> and <strong>sustainable architecture</strong>. His work focuses on <strong>building within existing structures</strong>, combining material innovation with cultural continuity to create resource-efficient, context-sensitive designs.
+    </p>
+    <p>
+      René Kusnawijaya academic education spans three European institutions: the <strong>Royal College of Art (RCA) in London</strong>, the <strong>ETSAS in Seville</strong>, and the <strong>Technical University of Munich (TUM)</strong>.
+    </p>
+    <p>
+      His practice prioritizes <strong>sustainable material systems</strong>, favoring locally sourced, low-impact materials like reclaimed wood, bio-based composites, and recycled aggregates. By integrating <strong>circular economy principles</strong>, The Studios projects aim to minimize waste and energy use through modular, reversible construction techniques.
+    </p>
+    <p>
+      Beyond design, <strong>photography</strong> is used to document architectural processes, employing wide-angle lenses to capture spatial narratives. His professional experience includes collaborations in <strong>Munich, Bali, and Madrid</strong>, working with emerging architecture firms on adaptive reuse and interior transformation projects.
+    </p>
+    <p>
+      Currently based in Madrid as an <strong>autónomo</strong>, René Kusnawijaya merges research, design, and visual storytelling to advocate for architecture that is <strong>responsive to context, climate, and community</strong>.
+    </p>
+  </div>
+
+  <!-- Portrait -->
+  <div class="portrait">
+    <img src="images/people/people-01-01.jpg" alt="Portrait">
+  </div>
+
+</main>
+
+<script>
+function toggleAbout() {
+  const text = document.getElementById("aboutText");
+  const plus = document.getElementById("aboutPlus");
+
+  if (text.style.maxHeight && text.style.maxHeight !== "0px") {
+    text.style.maxHeight = "0px";
+    plus.textContent = "+";
+  } else {
+    text.style.maxHeight = text.scrollHeight + "px";
+    plus.textContent = "−";
+  }
+}
+</script>
+
+</body>
+</html>

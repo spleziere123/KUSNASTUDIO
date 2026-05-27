@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – Studio Kusna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .page-wrapper{margin-top:140px;text-align:center;}
+    .contact-links-wrapper{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:30px;
+      margin-top:40px;
+    }
+    .contact-links{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:18px;
+    }
+    .contact-links a{
+      font-size:14px;
+      color:#111;
+      transition:color 0.25s ease;
+      letter-spacing:0.5px;
+    }
+    .contact-links a:hover{color:#f05a28;}
+    .impressum-title{
+      cursor:pointer;
+      font-size:14px;
+      letter-spacing:0.5px;
+    }
+    .impressum-text{
+      max-width:580px;
+      margin:0 auto;
+      text-align:left;
+      font-size:14px;
+      line-height:1.7;
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.4s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div></div>
+      <div class="title">
+        <a href="index.html" class="kusna-wordmark">
+          <span class="kusna-name">KUSNA</span>
+          <span class="kusna-studio">studio</span>
+        </a>
+      </div>
+      <nav class="right-nav">
+        <a href="about.html">About</a>
+        <a href="network.html">Network</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="contact-links-wrapper">
+      <div class="contact-links">
+        <a href="mailto:atelier@kusnawijaya.com">atelier@kusnawijaya.com</a>
+        <a href="https://instagram.com/deinprofilname" target="_blank">Instagram</a>
+      </div>
+      <div class="impressum-title" onclick="toggleImpressum()">
+        Impressum <span id="impPlus">+</span>
+      </div>
+    </div>
+    <div id="impText" class="impressum-text">
+      <p><strong>Legal Notice & Copyright Information</strong></p>
+      <p>
+        <strong>Service Provider (Autónomo):</strong><br>
+        Kadek Jerman<br>
+        Calle [Your Street Name & Number]<br>
+        280XX Madrid, Spain<br>
+        Email: <a href="mailto:studio@kusnawijaya.com">studio@kusnawijaya.com</a><br>
+        Tax ID (NIF/NIE): [Your Spanish Tax Number]<br>
+        Professional Registration: [COAM Registration Number]
+      </p>
+      <p>
+        All content on this website—including texts, photographs, designs, graphics, logos, and architectural visualizations—is protected by Spanish and international copyright law. Unauthorized use or reproduction is prohibited.
+      </p>
+      <p>
+        Photography & design work displayed are the intellectual property of Kadek Jerman or used with permission. Contact <a href="mailto:studio@kusnawijaya.com">studio@kusnawijaya.com</a> for licensing.
+      </p>
+      <p>
+        Information is for general purposes only; no warranty is given. External links are not under our responsibility. GDPR compliant.
+      </p>
+    </div>
+  </main>
+
+  <script>
+    function toggleImpressum() {
+      const text = document.getElementById("impText");
+      const plus = document.getElementById("impPlus");
+      if (text.style.maxHeight && text.style.maxHeight !== "0px") {
+        text.style.maxHeight = "0px";
+        plus.textContent = "+";
+      } else {
+        text.style.maxHeight = text.scrollHeight + "px";
+        plus.textContent = "−";
+      }
+    }
+  </script>
+
+</body>
+</html>

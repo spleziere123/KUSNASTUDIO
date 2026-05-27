@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ARQ Project 01 – Atelier René Kusnawijaya</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ===== LAYOUT ===== */
+
+.project-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: calc(100vh - 70px);
+}
+
+/* LEFT IMAGE */
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* ← wichtig */
+  background: white;     /* ruhiger Rand bei Hochformat */
+  transition: filter 0.3s ease;
+}
+
+}
+
+/* CLICK INDICATOR – OPEN TRIANGLE */
+
+.project-image::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  border: 1.5px solid white;
+}
+
+.project-image:hover::after {
+  opacity: 0.8;
+}
+
+.project-image:hover img {
+  filter: brightness(0.85);
+}
+
+/* RIGHT CONTENT */
+
+.project-text {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.project-text h2 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.project-text p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* ===== PROJECT IMAGE THUMBNAILS ===== */
+
+.project-thumbs {
+  display: flex;
+  gap: 6px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.project-thumbs img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.project-thumbs img:hover {
+  opacity: 1;
+}
+
+/* ===== BACK TO PHOTOGRAPHY GRID (2x2) ===== */
+
+.back-grid {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 30px);
+  grid-template-rows: repeat(2, 30px);
+  gap: 2px;
+}
+
+.back-grid img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.back-grid img:hover {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .project-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50vh auto;
+  }
+
+  .back-grid {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title">
+      <a href="index.html">K U S N A studio</a>
+    </div>
+    <div></div>
+  </div>
+</header>
+
+<main class="project-wrapper">
+
+  <!-- LEFT: MAIN IMAGE -->
+  <div class="project-image" onclick="nextImage()">
+    <img id="mainImage" src="images/architecture/arch-01-01.jpg">
+  </div>
+
+  <!-- RIGHT: TEXT + PROJECT THUMBS -->
+  <div class="project-text">
+
+    <p>ARQ Project 01</p>
+
+    <h2>Ubud Upper Floor — Adaptive Reuse, Bali 2023</h2>
+    <p>The raw concrete shell of a family home's upper floor became the starting point rather than a problem to solve. Instead of concealing the unfinished structure, the intervention worked with it — reading the existing columns, beams, and open edges as a found framework ready to be inhabited.
+The brief was to create a communal space where local and Western ways of living could genuinely meet: a house that belongs to its Balinese context while remaining open to other rhythms and practices. Local craftsmen shaped reclaimed tropical timber into adaptable furniture and moveable partitions, allowing the floor plan to shift between studio, gathering space, and private retreat. Recycled plastic granulate was cast into worktops and wall panels — affordable, durable, and quietly experimental.
+The shared terrace became the social core of the project. Framed openings and deliberate sight lines draw the surrounding rice field landscape into every corner of the interior, dissolving the boundary between the built and the grown. Views are not incidental here — they are structural, orienting the communal life of the house toward the land it sits within.
+Low material costs, short supply chains, and deep local craft knowledge kept the project grounded — both financially and culturally.</p>
+
+    <!-- ONLY CURRENT PROJECT IMAGES -->
+    <div class="project-thumbs">
+      <img src="images/architecture/arch-01-01.jpg" onclick="setImage(0)">
+      <img src="images/architecture/arch-01-02.jpg" onclick="setImage(1)">
+      <img src="images/architecture/arch-01-03.jpg" onclick="setImage(2)">
+      <img src="images/architecture/arch-01-04.jpg" onclick="setImage(3)">
+      <img src="images/architecture/arch-01-05.jpg" onclick="setImage(4)">
+      <img src="images/architecture/arch-01-06.jpg" onclick="setImage(5)">
+      <img src="images/architecture/arch-01-07.jpg" onclick="setImage(6)">
+      <img src="images/architecture/arch-01-08.jpg" onclick="setImage(7)">
+      <img src="images/architecture/arch-01-09.jpg" onclick="setImage(8)">
+
+    </div>
+
+  </div>
+
+  <!-- BACK TO ARCHITECTURE GRID -->
+  <a href="architecture.html" class="back-grid">
+    <img src="images/architecture/arch-01-01.jpg">
+    <img src="images/architecture/arch-02-01.jpg">
+    <img src="images/architecture/arch-03-01.jpg">
+    <img src="images/architecture/arch-04-01.jpg">
+  </a>
+
+</main>
+
+<script>
+
+/* IMAGE SWITCHING */
+
+const images = [
+  "images/architecture/arch-01-01.jpg",
+  "images/architecture/arch-01-02.jpg",
+  "images/architecture/arch-01-03.jpg",
+  "images/architecture/arch-01-04.jpg",
+  "images/architecture/arch-01-05.jpg",
+  "images/architecture/arch-01-06.jpg",
+  "images/architecture/arch-01-07.jpg",
+  "images/architecture/arch-01-08.jpg",
+  "images/architecture/arch-01-09.jpg"
+];
+
+let index = 0;
+
+function nextImage() {
+  index = (index + 1) % images.length;
+  document.getElementById("mainImage").src = images[index];
+}
+
+function setImage(i) {
+  index = i;
+  document.getElementById("mainImage").src = images[index];
+}
+
+</script>
+
+</body>
+</html>

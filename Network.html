@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Network</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+.page-wrapper {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.network-title {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.network-text {
+  max-width: 580px;
+  margin: 50px auto 0 auto;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.8;
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.network-text p {
+  margin-bottom: 18px;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title">
+      <a href="index.html">Studio Kusnawijaya</a>
+    </div>
+    <nav class="right-nav">
+      <a href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-wrapper">
+
+  <div class="network-title" onclick="toggleNetwork()">
+    Network <span id="networkPlus">+</span>
+  </div>
+
+  <div id="networkText" class="network-text">
+    <p> René Kusnawijaya  Urban Atelier thrives within a dynamic network of young architecture studios, photographers, and designers across Germany, Indonesia, and Spain—as well as other European cities. This cross-cultural exchange fuels his interdisciplinary approach, blending local insights with global perspectives.
+By collaborating with emerging voices in architecture, visual storytelling, and design, he explores new ways to document, analyze, and reimagine spaces. Whether through joint projects, exhibitions, or informal creative dialogues, these connections enrich his work with diverse methodologies and shared curiosity.
+This network isn’t just professional—it’s a community of like-minded creators pushing boundaries, questioning conventions, and shaping the future of design together.</p>
+    <p>Studio A</p>
+    <p>Institution B</p>
+    <p>Research Group C</p>
+  </div>
+
+</main>
+
+<script>
+function toggleNetwork() {
+  const text = document.getElementById("networkText");
+  const plus = document.getElementById("networkPlus");
+
+  if (text.style.maxHeight && text.style.maxHeight !== "0px") {
+    text.style.maxHeight = "0px";
+    plus.textContent = "+";
+  } else {
+    text.style.maxHeight = text.scrollHeight + "px";
+    plus.textContent = "−";
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scales – Studio René Kusnawijaya</title>
+<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ===== Grid 2x2 ===== */
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  padding: 100;
+  height: calc(100vh - 100px); /* Header abziehen */
+  margin: 40;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Scale-Titel: fett, orange, zentriert */
+.scale-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(128,128,128,0.5); /* kein grauer Rahmen */
+  color: #f3f57f; /* kräftiges Orange */
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.grid-item:hover .scale-label {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Hover-Effekt: andere Bilder grau */
+.grid-2x2:hover .grid-item {
+  filter: grayscale(100%);
+}
+
+.grid-2x2 .grid-item:hover {
+  filter: grayscale(10%);
+}
+
+/* Responsive: schmale Bildschirme untereinander */
+@media(max-width:1024px){
+  .grid-2x2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,1fr);
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div></div>
+    <div class="title"><a href="index.html">Atelier René Kusnawijaya</a></div>
+    <nav class="right-nav">
+      <a href="about.html">About</a>
+      <a href="network.html">Network</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="grid-2x2">
+  <a href="photography.html" class="grid-item">
+    <img src="images/photography/photo-01-01.jpg" alt="Photography">
+    <div class="scale-label">Photography</div>
+  </a>
+
+  <a href="architecture.html" class="grid-item">
+    <img src="images/architecture/arch-01-01.jpg" alt="Architecture">
+    <div class="scale-label">Architecture</div>
+  </a>
+
+  <a href="urban.html" class="grid-item">
+    <img src="images/urban/urban-01-01.jpg" alt="Urban">
+    <div class="scale-label">Urban</div>
+  </a>
+
+  <a href="objects.html" class="grid-item">
+    <img src="images/objects/obj-01-01.jpg" alt="Objects">
+    <div class="scale-label">Objects</div>
+  </a>
+</main>
+
+</body>
+</html>
