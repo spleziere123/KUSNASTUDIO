@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap');
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Raleway',sans-serif;background:#fff;color:#111;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+
+/* HEADER */
+header{height:70px;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:center;}
+.header-inner{width:90%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;}
+.title a{font-size:14px;letter-spacing:1px;text-align:center;}
+.title a:hover{color:#f05a28;}
+.right-nav{text-align:right;}
+.right-nav a{margin-left:18px;font-size:13px;transition:color 0.2s;}
+.right-nav a:hover{color:#f05a28;}
+
+/* KUSNA WORDMARK – seitenübergreifend */
+.kusna-wordmark{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  text-decoration:none;
+  line-height:1;
+}
+.kusna-wordmark .kusna-name{
+  font-family:'Raleway',sans-serif;
+  font-size:1.05rem;
+  font-weight:500;
+  letter-spacing:0.22em;
+  animation:kusna-shift 3s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+.kusna-wordmark .kusna-studio{
+  font-family:'Raleway',sans-serif;
+  font-size:0.52rem;
+  font-weight:400;
+  letter-spacing:0.42em;
+  color:#111;
+  opacity:0.4;
+  margin-left:0;
+  align-self:center;
+}
+@keyframes kusna-shift{
+  0%,  28%{color:#C8B89A;}
+  33%, 61%{color:#C8493A;}
+  66%, 94%{color:#4A7C6F;}
+  99%,100%{color:#C8B89A;}
+}
+@media(prefers-reduced-motion:reduce){
+  .kusna-wordmark .kusna-name{animation:none;color:#111;}
+}
+
+/* MAIN */
+main{width:90%;margin:40px auto;}
+
+/* INTRO IMAGE */
+.intro img{display:block;margin:0 auto;max-width:100%;max-height:80vh;object-fit:contain;cursor:pointer;}
+
+/* 2x2 GRID */
+.grid-2x2{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:30px;height:calc(100vh - 150px);}
+.grid-2x2 img{width:100%;height:auto;max-height:100%;object-fit:cover;display:block;cursor:pointer;}
+
+/* 4x4 GRID */
+.grid-4x4{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;}
+.grid-4x4 img{width:100%;height:auto;object-fit:contain;display:block;cursor:pointer;}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .grid-2x2{grid-template-columns:1fr;grid-template-rows:repeat(4,1fr);}
+  .grid-4x4{grid-template-columns:1fr;}
+}
+
+/* CONTACT PAGE */
+.contact-links{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  margin-top:0px;
+}
+.contact-links a{
+  text-decoration:none;
+  color:#111;
+  font-size:14px;
+  transition:color 0.25s ease;
+}
+.contact-links a:hover{
+  color:#f05a28;
+}
+.contact-links a:last-child{
+  margin-top:30px;
+}
